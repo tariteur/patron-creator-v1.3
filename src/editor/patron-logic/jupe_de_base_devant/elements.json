@@ -1,0 +1,396 @@
+{
+  "html": [
+    {
+      "label": "aissence",
+      "type": "number",
+      "id": "aissence",
+      "name": "aissence",
+      "minlength": 4,
+      "maxlength": 8,
+      "size": 10,
+      "required": true,
+      "class": "EventListeners form-control"
+    },
+    {
+      "label": "Tour de bassin",
+      "type": "number",
+      "id": "bassin",
+      "name": "bassin",
+      "minlength": 4,
+      "maxlength": 8,
+      "size": 10,
+      "required": true,
+      "class": "EventListeners form-control"
+    },
+    {
+      "label": "Longueur totale de la jupe",
+      "type": "number",
+      "id": "longeurtotalejupe",
+      "name": "longeurtotalejupe",
+      "minlength": 4,
+      "maxlength": 8,
+      "size": 10,
+      "required": true,
+      "class": "EventListeners form-control"
+    },
+    {
+      "label": "Hauteur taille bassin",
+      "type": "number",
+      "id": "heuteurtaillebassin",
+      "name": "heuteurtaillebassin",
+      "minlength": 4,
+      "maxlength": 8,
+      "size": 10,
+      "required": true,
+      "class": "EventListeners form-control"
+    },
+    {
+      "label": "Longueur mie bassin",
+      "type": "number",
+      "id": "longeurmiebassin",
+      "name": "longeurmiebassin",
+      "minlength": 4,
+      "maxlength": 8,
+      "size": 10,
+      "required": true,
+      "class": "EventListeners form-control"
+    },
+    {
+      "label": "Hauteur mie bassin",
+      "type": "number",
+      "id": "heuteurmiebassin",
+      "name": "heuteurmiebassin",
+      "minlength": 4,
+      "maxlength": 8,
+      "size": 10,
+      "required": true,
+      "class": "EventListeners form-control"
+    },
+    {
+      "label": "Tour de taille",
+      "type": "number",
+      "id": "Tourdetaille",
+      "name": "Tourdetaille",
+      "minlength": 4,
+      "maxlength": 8,
+      "size": 10,
+      "required": true,
+      "class": "EventListeners form-control"
+    },
+    {
+      "label": "Niv courbure 1 2 3",
+      "type": "number",
+      "id": "nivcourbure",
+      "name": "nivcourbure",
+      "minlength": 4,
+      "maxlength": 8,
+      "size": 10,
+      "required": true,
+      "class": "EventListeners form-control"
+    }
+  ],
+  "svg": {
+    "lines": [
+      {
+        "id": "ligneAAB",
+        "x1": "37.795275591",
+        "y1": "4456.062992109",
+        "x2": "0",
+        "y2": "4456.062992109",
+        "style": "stroke:Black;stroke-width:2"
+      },
+      {
+        "id": "ligneAAC",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "stroke:black;stroke-width:2"
+      },
+      {
+        "id": "ligneACD",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "stroke:White;stroke-width:4"
+      },
+      {
+        "id": "ligneAGH",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "stroke:White;stroke-width:2"
+      },
+      {
+        "id": "ligneAEF",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "White;stroke-width:2"
+      },
+      {
+        "id": "ligneAEA",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "stroke:black;stroke-width:2"
+      },
+      {
+        "id": "ligneAEC",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "White;stroke-width:2"
+      },
+      {
+        "id": "ligneAED",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "White;stroke-width:2"
+      },
+      {
+        "id": "ligneAEE",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "White;stroke-width:2"
+      },
+      {
+        "id": "ligneAEH",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "White;stroke-width:2"
+      },
+      {
+        "id": "ligneAEG",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "White;stroke-width:2"
+      },
+      {
+            "id": "ligneAEI",
+            "x1": "0",
+            "y1": "0",
+            "x2": "0",
+            "y2": "0",
+            "style": "stroke:black;stroke-width:2" 
+      },
+      {
+        "id": "ligneAEJ",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "stroke:black;stroke-width:2"
+      },
+      {
+        "id": "ligneAEK",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "stroke:black;stroke-width:2"
+      },
+      {
+            "id": "ligneAEL",
+            "x1": "0",
+            "y1": "0",
+            "x2": "0",
+            "y2": "0",
+            "style": "stroke:black;stroke-width:2"
+      },
+      {
+            "id": "ligneAEM",
+            "x1": "0",
+            "y1": "0",
+            "x2": "0",
+            "y2": "0",
+            "style": "stroke:black;stroke-width:2"
+      },
+      {
+        "id": "ligneAEN",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "stroke:black;stroke-width:2"
+      },
+      {
+        "id": "ligneAEO",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "stroke:black;stroke-width:2"
+      },
+      {
+        "id": "ligneAEP",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "stroke:black;stroke-width:2"
+      },
+      {
+        "id": "ligneAEQ",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "White;stroke-width:2"
+      },
+      {
+        "id": "ligneAER",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "White;stroke-width:2"
+      },
+      {
+        "id": "ligneAES",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "White;stroke-width:2"
+      },
+      {
+        "id": "ligneAET",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "White;stroke-width:2"
+      },
+      {
+            "id": "ligneAEV",
+            "x1": "0",
+            "y1": "0",
+            "x2": "0",
+            "y2": "0",
+            "style": "stroke:black;stroke-width:2"
+      },
+      {
+            "id": "ligneAEU",
+            "x1": "0",
+            "y1": "0",
+            "x2": "0",
+            "y2": "0",
+            "style": "stroke:black;stroke-width:2"
+      },
+      {
+            "id": "ligneAEW",
+            "x1": "0",
+            "y1": "0",
+            "x2": "0",
+            "y2": "0",
+            "style": "stroke:Black;stroke-width:2"
+      },
+      {
+            "id": "ligneAEX",
+            "x1": "0",
+            "y1": "0",
+            "x2": "0",
+            "y2": "0",
+            "style": "stroke:Black;stroke-width:2"
+      },
+      {
+            "id": "ligneAEY",
+            "x1": "0",
+            "y1": "0",
+            "x2": "0",
+            "y2": "0",
+            "style": "stroke:Black;stroke-width:2"
+      },
+      {
+            "id": "ligneAEZ",
+            "x1": "0",
+            "y1": "0",
+            "x2": "0",
+            "y2": "0",
+            "style": "stroke:Black;stroke-width:2"
+      },
+      {
+        "id": "ligneAEEA",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "White;stroke-width:2"
+      },
+      {
+        "id": "ligneAEEB",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "White;stroke-width:2"
+      },
+      {
+        "id": "ligneAEEC",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "White;stroke-width:2"
+      },
+      {
+        "id": "ligneAEEE",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "stroke:black;stroke-width:2"
+      },
+      {
+        "id": "ligneAAAB",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "stroke:black;stroke-width:2"
+      },
+      {
+        "id": "ligneAAAC",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "stroke:black;stroke-width:2"
+      },
+      {
+        "id": "ligneAEEF",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "White;stroke-width:2"
+      }
+    ],
+    "paths": [
+      {
+        "id": "AcourbeEmmanchure",
+        "d": "",
+        "style": "stroke:black;stroke-width:2;fill:none"
+      },
+      {
+        "id": "Acourbe2",
+        "d": "",
+        "style": "White;stroke-width:2;fill:none"
+      }
+    ]
+  }
+}

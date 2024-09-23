@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SVG Manipulation</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="libs/bootstarp.css" rel="stylesheet" />
+  </head>
+  <body>
+    <svg
+      id="svg"
+      class="svg"
+      width="3178.5826772"
+      height="4493.8582677"
+      viewBox="0 0 300 300"
+      preserveAspectRatio="xMidYMid meet"
+    >
+      <g id="viewport">
+        <rect
+          x="0"
+          y="0"
+          width="3178.5826772"
+          height="4493.8582677"
+          style="stroke: blue; stroke-width: 2; fill: none"
+        />
+        <g id="elements">
+            <rect
+            x="0"
+            y="0"
+            width="3178.5826772"
+            height="4493.8582677"
+            style="stroke: none; fill: none"
+        />
+      </svg>
+      
+    </svg>
+
+    <div class="container-fluid">
+      <button id="theme-toggle" class="btn btn-secondary">🌙</button>
+      <button id="hide" class="btn btn-secondary">◀</button>
+      <button id="toggleColor" class="btn btn-secondary">🌈</button>
+      <div id="color-picker"></div>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="panel controls">
+            <div class="row align-items-center">
+              <div class="col">
+                <button id="return" onclick="document.location.href='/add-person/index.html'" class="btn btn-secondary">Retour</button>
+              </div>
+              <div id="name" class="col-6 text-uppercase font-weight-bold" style="margin-left: -100px">Titre</div>
+            </div>
+            <br />
+            <div class="row align-items-center no-gutters">
+              <div class="col">
+                <label for="typesName">Types de patron :</label>
+              </div>
+              <div class="col">
+                  <select id="typesName" name="typesName" class="form-control">
+                  </select>
+              </div>
+            </div>
+            <br />
+            <hr class="separator" />
+            <br />
+            <div id="htmlElement" ></div>
+            <br />
+            <hr class="separator" />
+            <br />
+            <button type="submit" class="btn btn-primary" id="save">
+              Sauvegarder
+            </button>
+            <button type="button" class="btn btn-primary" id="download">
+              Télécharger
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module">
+      import { SVGEditor } from './script.js';
+
+      class App {
+        constructor() {
+            this.body = document.querySelector("body");
+            this.themeToggleButton = document.getElementById("theme-toggle");
+            this.toggleColorButton = document.getElementById("toggleColor");
+            this.hideButton = document.getElementById("hide");
+            this.svgElement = document.getElementById("svg");
+            this.nameElement = document.getElementById("name");
+            this.typesNameElement = document.getElementById('typesName');
+            this.viewportRect = document.querySelector("#viewport > rect");
+            this.typesName = [];
+            this.SVGEditor = null;
+            this.colorList = [
+                '000000', '993300', '333300', '003300', '003366', '000066', '333399', '333333',
+                '660000', 'FF6633', '666633', '336633', '336666', '0066FF', '666699', '666666',
+                'CC3333', 'FF9933', '99CC33', '669966', '66CCCC', '3366FF', '663366', '999999',
+                'CC66FF', 'FFCC33', 'FFFF66', '99FF66', '99CCCC', '66CCFF', '993366', 'CCCCCC',
+                'FF99CC', 'FFCC99', 'FFFF99', 'CCffCC', 'CCFFff', '99CCFF', 'CC99FF', 'FFFFFF'
+            ];
+        }
+      
+        init() {
+            document.addEventListener("DOMContentLoaded", () => {
+                this.applySavedTheme();
+                this.initializePage();
+                this.drawGridOnViewport();
+                this.createColorPicker();
+                this.loadSavedColor();
+            
+                this.SVGEditor = new SVGEditor("#svg", this.typesName[0]);
+
+                this.themeToggleButton.addEventListener("click", () => this.toggleTheme());
+                this.hideButton.addEventListener("click", () => this.togglePanelControls());
+                this.toggleColorButton.addEventListener('click', (event) => this.toggleColorPicker(event));
+                document.body.addEventListener('click', () => this.hideColorPicker());
+            });
+        }
+      
+        applySavedTheme() {
+            const savedTheme = localStorage.getItem("theme");
+            if (savedTheme === "dark") {
+                this.body.classList.add("dark-mode");
+                this.themeToggleButton.textContent = "☀️";
+                this.svgElement.classList.add("dark-mode-filter");
+            } else {
+                this.body.classList.remove("dark-mode");
+                this.themeToggleButton.textContent = "🌙";
+                this.svgElement.classList.remove("dark-mode-filter");
+            }
+        }
+      
+        initializePage() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const name = urlParams.get("name");
+            const editorString = urlParams.get("editor");
+        
+            if (this.nameElement) {
+                this.nameElement.innerHTML = name ? name : "Nom non spécifié";
+            }
+          
+            if (editorString) {
+                try {
+                    const editorObject = JSON.parse(editorString);
+                    this.typesName = Object.keys(editorObject);
+                    this.populateTypesNameDropdown();
+                } catch (error) {
+                    console.error("Erreur lors du parsing de editorString:", error);
+                }
+            } else {
+                console.error("Le paramètre 'editor' est manquant ou invalide dans l'URL.");
+            }
+          
+            if (this.typesNameElement) {
+                this.typesNameElement.addEventListener('change', () => this.SelectedTypeName());
+            }
+        }
+      
+        populateTypesNameDropdown() {
+            if (this.typesNameElement) {
+                this.typesNameElement.innerHTML = ''; // Nettoyer les anciennes options
+                this.typesName.forEach(typeName => {
+                    const option = document.createElement('option');
+                    option.value = typeName;
+                    option.textContent = typeName;
+                    this.typesNameElement.appendChild(option);
+                });
+            } else {
+                console.error("L'élément avec l'ID 'typesName' est introuvable.");
+            }
+        }
+      
+        drawGridOnViewport() {
+            if (!this.viewportRect) return;
+        
+            const viewportWidth = this.viewportRect.getAttribute('width');
+            const viewportHeight = this.viewportRect.getAttribute('height');
+        
+            const verticalSpacing = viewportWidth / 4;
+            const horizontalSpacing = viewportHeight / 4;
+        
+            this.createLines(verticalSpacing, viewportHeight, true);
+            this.createLines(horizontalSpacing, viewportWidth, false);
+        }
+      
+        createLines(spacing, length, isVertical) {
+            for (let i = 1; i <= 4; i++) {
+                const position = spacing * i;
+                const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                line.setAttribute('x1', isVertical ? position : 0);
+                line.setAttribute('y1', isVertical ? 0 : position);
+                line.setAttribute('x2', isVertical ? position : length);
+                line.setAttribute('y2', isVertical ? length : position);
+                line.setAttribute('style', 'stroke: green; stroke-width: 1');
+                this.viewportRect.parentNode.appendChild(line);
+            }
+        }
+      
+        toggleTheme() {
+            this.body.classList.toggle("dark-mode");
+            if (this.body.classList.contains("dark-mode")) {
+                this.themeToggleButton.textContent = "☀️";
+                this.svgElement.classList.add("dark-mode-filter");
+                localStorage.setItem("theme", "dark");
+            } else {
+                this.themeToggleButton.textContent = "🌙";
+                this.svgElement.classList.remove("dark-mode-filter");
+                localStorage.setItem("theme", "light");
+            }
+        }
+      
+        togglePanelControls() {
+            const panelControls = document.querySelector(".panel.controls");
+            if (panelControls) {
+                panelControls.classList.toggle("hidden");
+                this.hideButton.textContent = panelControls.classList.contains("hidden")
+                    ? "▶"
+                    : "◀";
+            }
+        }
+      
+        SelectedTypeName() {
+            const selectedPart = this.typesNameElement.value;
+            this.SVGEditor = new SVGEditor("#svg", selectedPart);
+        }
+      
+        createColorPicker() {
+            const picker = document.getElementById('color-picker');
+            if (picker) {
+                this.colorList.forEach(colorHex => {
+                    const li = document.createElement('li');
+                    li.className = 'color-item';
+                    li.dataset.hex = '#' + colorHex;
+                    li.style.backgroundColor = '#' + colorHex;
+                    picker.appendChild(li);
+                });
+              
+                picker.querySelectorAll('li').forEach(item => {
+                    item.addEventListener('click', () => {
+                        this.saveSelectedColor(item.dataset.hex);
+                    });
+                });
+            } else {
+                console.error("L'élément avec l'ID 'color-picker' est introuvable.");
+            }
+        }
+      
+        toggleColorPicker(event) {
+            event.stopPropagation();
+            const picker = document.getElementById('color-picker');
+            if (picker) {
+                picker.style.display = picker.style.display === 'block' ? 'none' : 'block';
+            }
+        }
+      
+        hideColorPicker() {
+            const picker = document.getElementById('color-picker');
+            if (picker) {
+                picker.style.display = 'none';
+            }
+        }
+      
+        saveSelectedColor(colorHex) {
+            localStorage.setItem("selectedColor", colorHex);
+            this.applySavedColor(colorHex);
+        }
+      
+        loadSavedColor() {
+            const savedColor = localStorage.getItem("selectedColor");
+            if (savedColor) {
+                this.applySavedColor(savedColor);
+            }
+        }
+      
+        applySavedColor(colorHex) {
+            document.querySelector('.panel.controls').style.backgroundColor = `${colorHex}80`;
+        }
+    }
+    const app = new App();
+    app.init();
+
+    </script>
+    <script src="function/save.js" type="module"></script>
+    <script src="libs/jspdf.js"></script>
+    <script src="function/svg_to_pdf.js" type="module"></script>
+    <script src="libs/gsap.js"></script>
+    <script src="libs/draggable.js"></script>
+    <script src="move_to_svg.js"></script>
+  </body>
+</html>

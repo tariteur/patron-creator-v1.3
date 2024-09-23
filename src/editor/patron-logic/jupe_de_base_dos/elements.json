@@ -1,0 +1,376 @@
+{
+  "html": [
+    {
+      "label": "Aissence",
+      "type": "number",
+      "id": "aissence",
+      "name": "aissence",
+      "minlength": 4,
+      "maxlength": 8,
+      "size": 10,
+      "required": true,
+      "class": "EventListeners form-control"
+    },
+    {
+      "label": "Tour de bassin",
+      "type": "number",
+      "id": "bassin",
+      "name": "bassin",
+      "minlength": 4,
+      "maxlength": 8,
+      "size": 10,
+      "required": true,
+      "class": "EventListeners form-control"
+    },
+    {
+      "label": "Longueur totale de la jupe",
+      "type": "number",
+      "id": "longeurtotalejupe",
+      "name": "longeurtotalejupe",
+      "minlength": 4,
+      "maxlength": 8,
+      "size": 10,
+      "required": true,
+      "class": "EventListeners form-control"
+    },
+    {
+      "label": "Hauteur taille bassin",
+      "type": "number",
+      "id": "heuteurtaillebassin",
+      "name": "heuteurtaillebassin",
+      "minlength": 4,
+      "maxlength": 8,
+      "size": 10,
+      "required": true,
+      "class": "EventListeners form-control"
+    },
+    {
+      "label": "Longueur mie bassin",
+      "type": "number",
+      "id": "longeurmiebassin",
+      "name": "longeurmiebassin",
+      "minlength": 4,
+      "maxlength": 8,
+      "size": 10,
+      "required": true,
+      "class": "EventListeners form-control"
+    },
+    {
+      "label": "Hauteur mie bassin",
+      "type": "number",
+      "id": "heuteurmiebassin",
+      "name": "heuteurmiebassin",
+      "minlength": 4,
+      "maxlength": 8,
+      "size": 10,
+      "required": true,
+      "class": "EventListeners form-control"
+    },
+    {
+      "label": "Tour de taille",
+      "type": "number",
+      "id": "Tourdetaille",
+      "name": "Tourdetaille",
+      "minlength": 4,
+      "maxlength": 8,
+      "size": 10,
+      "required": true,
+      "class": "EventListeners form-control"
+    },
+    {
+      "label": "Niv courbure 1 2 3",
+      "type": "number",
+      "id": "nivcourbure",
+      "name": "nivcourbure",
+      "minlength": 4,
+      "maxlength": 8,
+      "size": 10,
+      "required": true,
+      "class": "EventListeners form-control"
+    }
+  ],
+  "svg": {
+    "lines": [
+      {
+        "id": "ligneAB",
+        "x1": "37.795275591",
+        "y1": "4456.062992109",
+        "x2": "0",
+        "y2": "4456.062992109",
+        "style": "stroke:black; stroke-width: 4"
+      },
+      {
+        "id": "ligneAC",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "White; stroke-width: 4"
+      },
+      {
+        "id": "ligneCD",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "White; stroke-width: 4"
+      },
+      {
+        "id": "ligneGH",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "White; stroke-width: 4"
+      },
+      {
+        "id": "ligneED",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "White; stroke-width: 4"
+      },
+      {
+        "id": "ligneEF",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "White; stroke-width: 4"
+      },
+      {
+              "id": "ligneEA",
+              "x1": "0",
+              "y1": "0",
+              "x2": "0",
+              "y2": "0",
+              "style": "stroke: black; stroke-width: 4"
+      },
+      {
+        "id": "ligneEC",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "White; stroke-width: 4"
+      },
+      {
+        "id": "ligneED",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "stroke: black; stroke-width: 4"
+      },
+      {
+        "id": "ligneEE",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "White; stroke-width: 4"
+      },
+      {
+        "id": "ligneEH",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "stroke: black; stroke-width: 4"
+      },
+      {
+        "id": "ligneEG",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "White; stroke-width: 4"
+      },
+      {
+        "id": "ligneEI",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "stroke: black; stroke-width: 4"
+      },
+      {
+        "id": "ligneEJ",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "stroke: black; stroke-width: 4"
+      },
+      {
+        "id": "ligneEK",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "stroke: black; stroke-width: 4"
+      },
+      {
+        "id": "ligneEL",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "stroke: black; stroke-width: 4"
+      },
+      {
+        "id": "ligneEM",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "stroke: black; stroke-width: 4"
+      },
+      {
+        "id": "ligneEN",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "White; stroke-width: 4"
+      },
+      {
+        "id": "ligneEO",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "stroke: black; stroke-width: 4"
+      },
+      {
+        "id": "ligneEP",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "stroke: white; stroke-width: 4"
+      },
+      {
+        "id": "ligneEQ",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "stroke: white; stroke-width: 4"
+      },
+      {
+        "id": "ligneER",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "stroke: white; stroke-width: 4"
+      },
+      {
+        "id": "ligneES",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "White; stroke-width: 4"
+      },
+      {
+        "id": "ligneET",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "stroke: white; stroke-width: 4"
+      },
+      {
+        "id": "ligneEU",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "stroke: black; stroke-width: 4"
+      },
+      {
+        "id": "ligneEV",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "stroke: black; stroke-width: 4"
+      },
+      {
+        "id": "ligneEW",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "stroke: black; stroke-width: 4"
+      },
+      {
+        "id": "ligneEX",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "stroke: black; stroke-width: 4"
+      },
+      {
+        "id": "ligneEY",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "stroke: white; stroke-width: 4"
+      },
+      {
+        "id": "ligneEZ",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "stroke: white; stroke-width: 4"
+      },
+      {
+        "id": "ligneEEA",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "stroke: black; stroke-width: 4"
+      },
+      {
+        "id": "ligneEEB",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "stroke:black;stroke-width:4"
+      },
+      {
+        "id": "ligneEEC",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "stroke: white;stroke-width:4"
+     },
+
+      {
+        "id": "ligneEED",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "stroke: BLACK;stroke-width:4"
+      }
+    ],
+    "paths": [
+      {
+        "id": "courbeEmmanchure",
+        "d": "",
+        "style": "stroke: black;stroke-width:4;fill:none;"
+      }
+    ]
+  }
+}

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SVG Manipulation</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="libs/bootstarp.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/themes/prism.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <button id="theme-toggle" class="btn btn-secondary">🌙</button>
+    <button id="hide" class="btn btn-secondary">◀</button>
+    <button id="toggleColor" class="btn btn-secondary">🌈</button>
+    <div id="color-picker"></div>
+    <flex class="v" style="height: 101.5vh">
+      <flex-item style="flex: 1">
+        <flex class="h">
+          <flex-item style="flex: 2" id="drawing">
+            <div
+              class="header, color"
+              style="
+                width: 147px;
+                height: 25px;
+                position: absolute;
+                padding: 2px;
+                right: 0;
+                text-align: right;
+                align-items: center;
+                justify-content: flex-end;
+                z-index: 15;
+                pointer-events: none;
+              "
+            >
+              Éditeur de patron
+            </div>
+              <div class="hotbar">
+                <button id="previewCodeButton" class="button">
+                  Code Preview
+                </button>
+                <img
+                  src="img/deplacement.png"
+                  class="selected"
+                  name="deplacement"
+                />
+                <img src="img/point.png" name="point" />
+                <img src="img/segment.png" name="segment" />
+                <div class="curve-container">
+                  <button
+                    id="createCurveButton"
+                    class="btn btn-secondary"
+                    style="display: none"
+                  >
+                    🎯
+                  </button>
+                  <img src="img/courbe.png" name="courbe" />
+                </div>
+                <button id="downloadDataButton" class="btn btn-secondary">
+                  ⬇️
+                </button>
+              </div>
+            </div>
+
+            <svg
+              id="svg"
+              class="svg"
+              width="3178.5826772"
+              height="4493.8582677"
+              viewBox="0 0 300 300"
+              preserveAspectRatio="xMidYMid meet"
+            >
+              <g id="viewport">
+                <rect
+                  x="0"
+                  y="0"
+                  width="3178.5826772"
+                  height="4493.8582677"
+                  style="stroke: blue; stroke-width: 2; fill: none"
+                />
+                <g id="elementsEditor">
+                  <rect
+                    x="0"
+                    y="0"
+                    width="3178.5826772"
+                    height="4493.8582677"
+                    style="stroke: none; fill: none"
+                  />
+                </g>
+                <g id="elementsPreview">
+                  <rect
+                    x="0"
+                    y="0"
+                    width="3178.5826772"
+                    height="4493.8582677"
+                    style="stroke: none; fill: none"
+                  />
+                </g>
+              </g>
+            </svg>
+
+            <div
+              class="window"
+              id="editorJsonContent"
+              data-svg-x="-2995.9055118"
+              data-svg-y="0"
+              data-svg-width="1497.9527559"
+              data-svg-height="1497.9527559"
+            >
+              <div class="header, color">Éditeur JSON</div>
+              <div class="content"></div>
+            </div>
+
+            <div
+              class="window"
+              id="elementsJsonContent"
+              data-svg-x="-2995.9055118"
+              data-svg-y="1497.9527559"
+              data-svg-width="1497.9527559"
+              data-svg-height="1497.9527559"
+            >
+              <div class="header, color">Éléments JSON</div>
+              <div class="content"></div>
+            </div>
+
+            <div
+              class="window"
+              id="typeJsContent"
+              data-svg-x="-2995.9055118"
+              data-svg-y="2995.9055118"
+              data-svg-width="1497.9527559"
+              data-svg-height="1497.9527559"
+            >
+              <div class="header, color">Type JS</div>
+              <div class="content"></div>
+            </div>
+
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="panel controls" id="editor">
+                    <br />
+                    <div class="row align-items-center no-gutters">
+                      <div class="col">
+                        <label for="typesName">Type de patron :</label>
+                      </div>
+                      <div class="col">
+                        <input
+                          id="typesName"
+                          name="typesName"
+                          class="form-control"
+                          type="text"
+                          placeholder="Entrez le type"
+                        />
+                      </div>
+                    </div>
+                    <br />
+                    <hr class="separator" />
+                    <br />
+                    <div id="htmlElementCreator"></div>
+                    <button id="add-label" class="btn btn-secondary">
+                      Add label +
+                    </button>
+                    <br />
+                    <hr class="separator" />
+                    <br />
+                  </div>
+                  <div class="panel controls color" id="preview">
+                    <div class="row align-items-center">
+                      <div class="col">
+                        <button id="return" onclick="document.location.href='/add-person/index.html'" class="btn btn-secondary griser">Retour</button>
+                      </div>
+                      <div id="name" class="col-6 text-uppercase font-weight-bold" style="margin-left: -100px">Titre</div>
+                    </div>
+                    <br />
+                    <div class="row align-items-center no-gutters">
+                      <label for="typesName">Types de patron :</label>
+                    </div>
+                    <br />
+                    <hr class="separator" />
+                    <br />
+                    <div id="htmlElementPreview" ></div>
+                    <br />
+                    <hr class="separator" />
+                    <br />
+                    <button type="submit" class="btn btn-primary griser" id="save">
+                      Sauvegarder
+                    </button>
+                    <button type="button" class="btn btn-primary griser" id="download">
+                      Télécharger
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </flex-item>
+
+          <flex-resizer class="resizer-x"></flex-resizer>
+          <flex-item style="flex: 1" id="scratch">
+            <!-- Zone pour l'éditeur de blocs -->
+            <div id="blocklyDiv">
+              <div
+                class="header, color"
+                style="
+                  width: 147px;
+                  height: 25px;
+                  padding: 2px;
+                  align-items: center;
+                  justify-content: flex-end;
+                "
+              >
+                Éditeur de code
+              </div>
+            </div>
+
+            <div id="toolbox">
+              <xml>
+                <category name="Logique" colour="#FFAB00">
+                  <block type="controls_if"></block>
+                  <block type="logic_compare"></block>
+                  <block type="logic_operation"></block>
+                  <block type="logic_negate"></block>
+                  <block type="logic_boolean"></block>
+                  <block type="logic_null"></block>
+                  <block type="logic_ternary"></block>
+                </category>
+              
+                <category name="Boucles" colour="#4C97FF">
+                  <block type="controls_repeat_ext"></block>
+                  <block type="controls_whileUntil"></block>
+                  <block type="controls_for"></block>
+                  <block type="controls_forEach"></block>
+                  <block type="controls_flow_statements"></block>
+                </category>
+              
+                <category name="Mathématiques" colour="#0F9D58">
+                  <block type="math_number"></block>
+                  <block type="math_arithmetic"></block>
+                  <block type="math_single"></block>
+                  <block type="math_trig"></block>
+                  <block type="math_constant"></block>
+                  <block type="math_number_property"></block>
+                  <block type="math_change"></block>
+                  <block type="math_round"></block>
+                  <block type="math_on_list"></block>
+                  <block type="math_modulo"></block>
+                  <block type="math_constrain"></block>
+                  <block type="math_random_int"></block>
+                  <block type="math_random_float"></block>
+                </category>
+              
+                <category name="Texte" colour="#F4B400">
+                  <block type="text"></block>
+                  <block type="text_join"></block>
+                  <block type="text_append"></block>
+                  <block type="text_length"></block>
+                  <block type="text_isEmpty"></block>
+                  <block type="text_indexOf"></block>
+                  <block type="text_charAt"></block>
+                  <block type="text_getSubstring"></block>
+                  <block type="text_changeCase"></block>
+                  <block type="text_trim"></block>
+                  <block type="text_print"></block>
+                  <block type="text_prompt_ext"></block>
+                </category>
+              
+                <category name="Listes" colour="#A142F4">
+                  <block type="lists_create_with"></block>
+                  <block type="lists_repeat"></block>
+                  <block type="lists_length"></block>
+                  <block type="lists_isEmpty"></block>
+                  <block type="lists_indexOf"></block>
+                  <block type="lists_getIndex"></block>
+                  <block type="lists_setIndex"></block>
+                  <block type="lists_getSublist"></block>
+                  <block type="lists_split"></block>
+                  <block type="lists_sort"></block>
+                </category>
+              
+                <category name="Variables" custom="VARIABLE" colour="#FF6F61"></category>
+              
+                <category name="Fonctions" custom="PROCEDURE" colour="#6B8E23"></category>
+
+                <category name="Custom" colour="#B0BEC5"></category>
+              </xml>
+            </div>
+          </flex-item>
+        </flex>
+      </flex-item>
+    </flex>
+    <script src="script/page.js" type="module"></script>
+    <script src="libs/jspdf.js"></script>
+    <script src="libs/gsap.js"></script>
+    <script src="libs/draggable.js"></script>
+    <script src="script/move_to_svg.js"></script>
+    <script src="libs/jszip.js"></script>
+    <script src="libs/prism.js"></script>
+    <script src="libs/blockly/blockly.js"></script>
+    <script src="libs/blockly/javascript_compressed.js"></script>
+  </body>
+</html>

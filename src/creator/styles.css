@@ -1,0 +1,409 @@
+/***** Theme *****/
+body.light-mode {
+  background-color: white;
+  color: black;
+}
+
+body.dark-mode {
+  background-color: #252525;
+  color: white;
+}
+
+.dark-mode-filter {
+  filter: invert(1) grayscale(1);
+}
+
+body {
+  overflow: hidden; /* Empêche l'affichage des barres de défilement */
+  margin: 0; /* Supprime les marges par défaut pour éviter les barres de défilement inutiles */
+}
+
+body.light-mode #blocklyDiv .injectionDiv.geras-renderer.classic-theme > div {
+  background-color: white;
+  color: black;
+}
+
+/* Thème clair */
+body.light-mode #blocklyDiv .injectionDiv.geras-renderer.classic-theme > div {
+  background-color: #ddd; /* Arrière-plan pour le thème clair */
+  color: black; /* Couleur du texte pour le thème clair */
+}
+
+body.light-mode
+  #blocklyDiv
+  .injectionDiv.geras-renderer.classic-theme
+  > svg.blocklyScrollbarVertical.blocklyMainWorkspaceScrollbar {
+  background-color: white;
+  fill: black; /* Si c'est un SVG, utiliser 'fill' pour changer la couleur du contenu */
+}
+
+body.light-mode
+  #blocklyDiv
+  > div.injectionDiv.geras-renderer.classic-theme
+  > svg.blocklySvg {
+  background-color: white; /* Arrière-plan pour le SVG */
+  fill: black; /* Couleur du contenu du SVG (éléments graphiques) */
+}
+
+/* Thème clair */
+body.light-mode
+  #blocklyDiv
+  > div.injectionDiv.geras-renderer.classic-theme
+  > svg:nth-child(7)
+  > path {
+  fill: black; /* Couleur de remplissage du chemin SVG pour le thème clair */
+}
+
+/* Thème sombre */
+body.dark-mode #blocklyDiv .injectionDiv.geras-renderer.classic-theme > div {
+  background-color: #313131;
+  color: white;
+}
+
+body.dark-mode
+  #blocklyDiv
+  .injectionDiv.geras-renderer.classic-theme
+  > svg.blocklyScrollbarVertical.blocklyMainWorkspaceScrollbar {
+  background-color: #252525;
+  fill: white; /* Couleur du contenu pour le thème sombre */
+}
+
+body.dark-mode
+  #blocklyDiv
+  > div.injectionDiv.geras-renderer.classic-theme
+  > svg.blocklySvg {
+  background-color: #252525; /* Arrière-plan sombre pour le SVG */
+  fill: white; /* Couleur des éléments graphiques du SVG */
+}
+
+body.dark-mode
+  #blocklyDiv
+  > div.injectionDiv.geras-renderer.classic-theme
+  > svg:nth-child(7)
+  > path {
+  fill: #313131;
+}
+
+/***** Basic *****/
+.contour-rouge {
+  position: relative; /* Nécessaire pour que le pseudo-élément soit positionné correctement */
+}
+
+.griser {
+  filter: grayscale(100%); /* Effet de grisage */
+  opacity: 0.5; /* Réduit l'opacité pour simuler un effet grisé */
+  pointer-events: none;
+}
+
+.contour-rouge::before {
+  content: ""; /* Obligatoire pour créer le pseudo-élément */
+  position: absolute;
+  top: 0px; /* Positionne au-dessus de l'élément */
+  left: 0px; /* Positionne à gauche de l'élément */
+  right: 0px; /* Positionne à droite de l'élément */
+  bottom: 0px; /* Positionne en dessous de l'élément */
+  border: 5px solid red; /* Bordure rouge */
+  pointer-events: none; /* Pour éviter tout problème d'interaction avec le pseudo-élément */
+}
+
+/***** Button *****/
+#theme-toggle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 15;
+}
+
+#toggleColor {
+  position: absolute;
+  top: 10px;
+  right: 60px;
+  z-index: 15;
+}
+
+#hide {
+  position: absolute;
+  top: 10px;
+  right: 110px;
+  z-index: 15;
+}
+
+/***** Panel *****/
+.panel.controls {
+  height: 100vh;
+  /* 20px marge pour l'ensemble de la fenêtre */
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #00000080;
+  z-index: 10;
+}
+
+.panel.controls {
+  transition: transform 0.3s ease-in-out;
+}
+
+.panel.controls.hidden {
+  transform: translateX(-100%);
+}
+
+.panel.controls input {
+  color: inherit;
+  background-color: inherit;
+}
+
+.panel.controls label {
+  color: inherit;
+}
+
+/***** Svg *****/
+.svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: move;
+  overflow: hidden; /* Assure que le contenu ne dépasse pas */
+}
+
+.svg-scrim {
+  pointer-events: none;
+  z-index: 5;
+}
+
+.proxy {
+  fill: none;
+  stroke: none;
+}
+
+.controls {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 12px;
+  z-index: 10;
+}
+
+.controls-button {
+  font-weight: 700;
+}
+
+.info {
+  user-select: none;
+  pointer-events: none;
+}
+
+.info ul {
+  font-size: 13px;
+  list-style-type: none;
+  padding: 0;
+  line-height: 20px;
+  margin-top: 0;
+}
+
+.svg-background {
+  fill: none;
+  stroke: none;
+}
+
+.separator {
+  border: 5;
+  height: 1px;
+  background: gray;
+  margin: 10px 0;
+}
+
+/***** Color picker *****/
+#color-picker {
+  width: 180px;
+  background: #6c757d;
+  height: 115px;
+  padding: 5px;
+  border: 5px solid #6c757d;
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 60px;
+  z-index: 10;
+  border-radius: 5px;
+}
+
+#color-picker .color-item {
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+  list-style-type: none;
+  float: left;
+  margin: 2px;
+  border: 1px solid #ddd;
+  margin-left: 3px;
+}
+
+#color-picker .color-item:hover {
+  border: 1px solid #666;
+  opacity: 0.8;
+  -moz-opacity: 0.8;
+  filter: alpha(opacity=8);
+}
+
+/***** Hotbar *****/
+.hotbar {
+  position: absolute;
+  right: 0;
+  top: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centre horizontalement les éléments */
+  background-color: #6c757d;
+  padding: 7px;
+  border-radius: 8px;
+  height: 303px;
+  width: 60px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  z-index: 10;
+  user-select: none; /* Empêche la sélection des éléments dans la hotbar */
+  overflow: hidden; /* Assure que les éléments enfants ne dépassent pas */
+}
+
+.hotbar img,
+.hotbar button {
+  margin-bottom: 3px;
+  margin-top: 5px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  user-select: none; /* Empêche la sélection des images */
+  background-color: #58585880;
+}
+
+.hotbar img {
+  width: 50px;
+  height: 50px;
+  border-radius: 9px;
+}
+
+.hotbar img:hover,
+.hotbar button:hover {
+  transform: scale(1.1);
+}
+
+.hotbar .selected {
+  box-shadow: 0 0 0 3px #ffcc00;
+}
+
+.curve-container {
+  display: flex;
+  align-items: center; /* Aligner verticalement le bouton et l'image */
+}
+
+#createCurveButton {
+  margin-right: 5px; /* Espace entre le bouton et l'image */
+  padding: 0;
+  width: 50px; /* Même taille que les images pour la cohérence */
+  height: 50px;
+  border-radius: 9px; /* Pour correspondre avec le style des images */
+}
+
+/***** Script *****/
+/* Style pour chaque fenêtre */
+.window {
+  position: absolute;
+  overflow: auto; /* Ajoute des barres de défilement si le contenu dépasse */
+  border: 1px solid #ccc; /* Bordure autour des fenêtres */
+  border-radius: 8px; /* Coins arrondis */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+  margin: 10px;
+  padding: 10px;
+  z-index: 5;
+}
+.header {
+  background-color: #007bffb4; /* Couleur de fond bleue */
+  color: #fff; /* Texte en blanc */
+  padding: 3px; /* Espacement intérieur */
+  font-size: 1.2em; /* Taille de la police */
+  border-radius: 6px; /* Coins arrondis de l'en-tête */
+  margin-bottom: 10px; /* Espacement entre l'en-tête et le contenu */
+  font-weight: bold; /* Texte en gras */
+  text-align: center; /* Centrer le texte */
+  z-index: 6;
+}
+
+/***** Scratch *****/
+#blocklyDiv {
+  height: 100%;
+  width: 100%;
+  z-index: 4;
+}
+#toolbox {
+  display: none;
+  z-index: 4;
+}
+
+/***** Flex *****/
+
+flex {
+  display: flex;
+}
+
+flex-item > flex {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+flex.h {
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+flex.v {
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+flex-item {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+flex > flex-resizer {
+  -ms-flex: 0 0 8px;
+  flex: 0 0 8px;
+  background: white;
+}
+
+flex.h > flex-resizer {
+  cursor: ew-resize;
+}
+
+flex.v > flex-resizer {
+  cursor: ns-resize;
+}
+
+.resizer-x {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  padding: 1px;
+  z-index: 15;
+  cursor: col-resize;
+}
+
+.resizer-x::before,
+.resizer-x::after {
+  content: "";
+  width: 2px;
+  height: 16px;
+  margin: 2px;
+  background: lightgray;
+}
+
+/***** Preview *****/
+#preview {
+  display: none;
+}

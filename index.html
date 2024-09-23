@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Envoi d'image avec FormData</title>
+</head>
+<body>
+    <input type="file" id="imageInput" accept="image/*">
+    <button onclick="handleImage()">Envoyer l'image</button>
+    <div id="result"></div>
+
+    <script>
+        function handleImage() {
+            const imageInput = document.getElementById('imageInput');
+            const resultDiv = document.getElementById('result');
+
+            if (imageInput.files && imageInput.files[0]) {
+                const formData = new FormData();
+                formData.append('image', imageInput.files[0]);
+
+                fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyBIdOQoUsJfy0i93DCxfpNUH73v_xDh8CE', {
+                    method: 'POST',
+                    body: JSON.stringify({
+                      contents: [
+                        {
+                          parts: [
+                            { text: formData }
+                          ]
+                        }
+                      ]
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    resultDiv.textContent = data.message;
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            }
+        }
+    </script>
+</body>
+</html>

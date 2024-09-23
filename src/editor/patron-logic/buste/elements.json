@@ -1,0 +1,152 @@
+8{
+  "html": [
+    {"label": "Tour de taille", "type": "number", "id": "tourdetaille", "name": "tourdetaille", "min": 0, "max": 100, "step": 0.1, "value": 40, "class": "form-control"},
+    {"label": "Longueur 7ème cervicale-taille dos", "type": "number", "id": "longeur7emecervicaletailledos", "name": "longeur7emecervicaletailledos", "min": 0, "max": 100, "step": 0.1, "value": 30, "class": "EventListeners form-control"},
+    {"label": "Hauteur taille-points de sein", "type": "number", "id": "hauteurtaillepointedesein", "name": "hauteurtaillepointedesein", "min": 0, "max": 100, "step": 0.1, "value": 12, "class": "EventListeners form-control"},
+    {"label": "Carrure dos", "type": "number", "id": "carruredos", "name": "carruredos", "min": 0, "max": 100, "step": 0.1, "value": 20, "class": "EventListeners form-control"},
+    {"label": "Tour de poitrine", "type": "number", "id": "tourdepoitrine", "name": "tourdepoitrine", "min": 0, "max": 100, "step": 0.1, "value": 50, "class": "EventListeners form-control"},
+    {"label": "Tour d'encolure", "type": "number", "id": "tourdeencolure", "name": "tourdeencolure", "min": 0, "max": 100, "step": 0.1, "value": 12, "class": "EventListeners form-control"},
+    {"label": "Longueur d'épaule", "type": "number", "id": "longeurdepaule", "name": "longeurdepaule", "min": 0, "max": 100, "step": 0.1, "value": 13, "class": "EventListeners form-control"},
+    {"label": "Descente d'épaule", "type": "number", "id": "desantedepaule", "name": "desantedepaule", "min": 0, "max": 100, "step": 0.1, "value": 3, "class": "EventListeners form-control"}
+  ],
+  "svg": {
+    "lines": [
+    {
+      "id": "ligneAB",
+      "x1": "37.795275591",
+      "y1": "4456.062992109",
+      "x2": "0",
+      "y2": "4456.062992109",
+      "style": "stroke: black; stroke-width: 4"
+    },
+    {
+      "id": "ligneAC",
+      "x1": "0",
+      "y1": "0",
+      "x2": "0",
+      "y2": "0",
+      "style": "stroke: black; stroke-width: 4"
+    },
+    {
+      "id": "ligneEM",
+      "x1": "0",
+      "y1": "0",
+      "x2": "0",
+      "y2": "0",
+      "style": "stroke: white; stroke-width: 4"
+    },
+    {
+      "id": "ligneHTPB",
+      "x1": "0",
+      "y1": "0",
+      "x2": "0",
+      "y2": "0",
+      "style": "stroke: black; stroke-width: 4"
+    },
+    {
+      "id": "ligneLP",
+      "x1": "0",
+      "y1": "0",
+      "x2": "0",
+      "y2": "0",
+      "style": "stroke: white; stroke-width: 4"
+    },
+    {
+      "id": "lignePEL",
+      "x1": "0",
+      "y1": "0",
+      "x2": "0",
+      "y2": "0",
+      "style": "stroke: black; stroke-width: 4"
+    },
+    {
+      "id": "ligneCE",
+      "x1": "0",
+      "y1": "0",
+      "x2": "0",
+      "y2": "0",
+      "style": "stroke: black; stroke-width: 4"
+    },
+    {
+      "id": "ligneEF",
+      "x1": "0",
+      "y1": "0",
+      "x2": "0",
+      "y2": "0",
+      "style": "stroke: black; stroke-width: 4"
+    },
+    {
+      "id": "ligneFG",
+      "x1": "0",
+      "y1": "0",
+      "x2": "0",
+      "y2": "0",
+      "style": "stroke: white; stroke-width: 4"
+    },
+    {
+      "id": "ligneGM",
+      "x1": "0",
+      "y1": "0",
+      "x2": "0",
+      "y2": "0",
+      "style": "stroke: white; stroke-width: 4"
+    },
+    {
+      "id": "ligneFM",
+      "x1": "0",
+      "y1": "0",
+      "x2": "0",
+      "y2": "0",
+      "style": "stroke: black; stroke-width: 4"
+    },
+    {
+      "id": "ligneHE",
+      "x1": "0",
+      "y1": "0",
+      "x2": "0",
+      "y2": "0",
+      "style": "stroke: white; stroke-width: 4"
+    },
+    {
+      "id": "lignePE",
+      "x1": "0",
+      "y1": "0",
+      "x2": "0",
+      "y2": "0",
+      "style": "stroke: white; stroke-width: 4"
+    },
+    {
+      "id": "ligneCH1",
+      "x1": "0",
+      "y1": "0",
+      "x2": "0",
+      "y2": "0",
+      "style": "stroke: red; stroke-width: 4"
+    },
+    {
+      "id": "ligneCH2",
+      "x1": "0",
+      "y1": "0",
+      "x2": "0",
+      "y2": "0",
+      "style": "stroke: red; stroke-width: 4"
+    },
+    {
+      "id": "ligneCH3",
+      "x1": "0",
+      "y1": "0",
+      "x2": "0",
+      "y2": "0",
+      "style": "stroke: red; stroke-width: 4"
+    }
+    ],
+    "paths": [
+      {
+        "id": "courbeEmmanchure",
+        "d": "",
+        "style": "fill: none; stroke: blue; stroke-width: 4"
+      }
+    ]
+  }
+}
+  

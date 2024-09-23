@@ -1,0 +1,116 @@
+{
+  "html": [
+    {
+      "label": "aissence",
+      "type": "number",
+      "id": "aissence",
+      "name": "aissence",
+      "minlength": 4,
+      "maxlength": 8,
+      "size": 10,
+      "required": true,
+      "class": "EventListeners form-control"
+    },
+    {
+      "label": "longeur pate de boutonage",
+      "type": "number",
+      "id": "longeurpatedeboutonageceinture",
+      "name": "longeurpatedeboutonageceinture",
+      "minlength": 4,
+      "maxlength": 8,
+      "size": 10,
+      "required": true,
+      "class": "EventListeners form-control"
+    },
+    {
+      "label": "Tour de taille",
+      "type": "number",
+      "id": "Tourdetaille",
+      "name": "Tourdetaille",
+      "minlength": 4,
+      "maxlength": 8,
+      "size": 10,
+      "required": true,
+      "class": "EventListeners form-control"
+    },
+    {
+      "label": "Largeurceinture",
+      "type": "number",
+      "id": "Largeurceinture",
+      "name": "Largeurceinture",
+      "minlength": 4,
+      "maxlength": 8,
+      "size": 10,
+      "required": true,
+      "class": "EventListeners form-control"
+    }
+  ],
+  "svg": {
+    "lines": [
+      {
+        "id": "ligneFA",
+        "x1": "37.795275591",
+        "y1": "4456.062992109",
+        "x2": "0",
+        "y2": "4456.062992109",
+        "style": "stroke: black;stroke-width:2"
+      },
+      {
+        "id": "ligneFB",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "stroke: black;stroke-width:2"
+      },
+      {
+        "id": "ligneFC",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "stroke: black;stroke-width:2"
+      },
+      {
+        "id": "ligneFD",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "stroke: black;stroke-width:2"
+      },
+      {
+        "id": "ligneFE",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "stroke: black;stroke-width:2"
+      },
+      {
+        "id": "ligneFF",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "stroke: black;stroke-width:2"
+      },
+      {
+        "id": "ligneFG",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "stroke: black;stroke-width:2"
+      },
+      {
+        "id": "ligneFH",
+        "x1": "0",
+        "y1": "0",
+        "x2": "0",
+        "y2": "0",
+        "style": "stroke: black;stroke-width:2"
+      }
+    ]
+  }
+}
